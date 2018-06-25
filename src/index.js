@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import App from './App-1';
-import './styles/index.css';
+import MyGame from './components/MainGame';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+import './styles/style.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<MyGame />, document.getElementById('root'));

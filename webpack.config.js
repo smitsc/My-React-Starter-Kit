@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "index-bundle.js"
-  },
+  }, 
   module: {
     rules: [
       {
@@ -21,7 +21,19 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
-      }
+      },
+	  {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}  
+          }
+        ]
+      },
+	  { test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+		use: ["url-loader?limit=100000"]
+	  }
     ]
   },
   plugins: [
